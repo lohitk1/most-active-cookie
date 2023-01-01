@@ -147,6 +147,15 @@ def findMaxFreqFromDictionary(dictionary):
     return max_freq_item_list
 
 
+def printItemsFound(list_of_items, item_name_plural="items"):
+
+    if (len(list_of_items) == 0):
+        print("No", item_name_plural, "were found")
+
+    for item in list_of_items:
+        print(item)
+
+
 def main():
 
     # Parsing the command line arguments to get the csv file name and date to search for in file
@@ -159,7 +168,8 @@ def main():
     # Finding the list of cookies with the maximum occuring frequency in the hashmap
     max_freq_cookie_list = findMaxFreqFromDictionary(cookie_freq_dictionary)
 
-    print(max_freq_cookie_list)
+    # Printing the calculated cookies with maximum occuring frequencies
+    printItemsFound(max_freq_cookie_list, "cookies")
 
 
 if __name__ == "__main__":
