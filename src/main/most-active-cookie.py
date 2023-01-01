@@ -1,4 +1,5 @@
 import argparse
+import datetime
 from validations import validate_csv_file, validate_date
 from calculations import extract_cookie_frequency, find_max_freq_from_dictionary
 from displays import display_error, print_items_found
@@ -6,8 +7,8 @@ from displays import display_error, print_items_found
 def get_command_line_arguments():
     parser = argparse.ArgumentParser(
         prog="Most-Active-Cookie",
-        description="Finds the most active cookie in a \
-            cookie log file given a specific date"
+        description="Finds the most active cookie in a" \
+            "cookie log file given a specific date"
     )
 
     # Adding file_name as a positional argument
@@ -32,8 +33,11 @@ def get_command_line_arguments():
 
     # Validating the given date
     if (validate_date("date", args.date) == False):
-        display_error("Date to search is given in the wrong format. \
-            Correct format: 'YYYY-MM-DD'")
+        display_error(
+            "Date to search is given in the wrong format." \
+            "\nDate given: " + args.date +\
+            "\nCorrect format: 'YYYY-MM-DD'"
+            )
 
     return [args.file_name, args.date]
 

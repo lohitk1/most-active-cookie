@@ -32,10 +32,10 @@ def extract_cookie_frequency(file_name, date_to_search):
     for row in csvreader:
         if (validate_date("datetime", row[1]) == False):
             display_error(
-                "Date in row " + row_counter + " of given CSV file \
-                is in the wrong format. \nDate in row " + row_counter + \
-                " of given CSV file of wrong format."
-                    )
+                "Date in entry " + str(row_counter) + " of given CSV file" \
+                " is in the wrong format. \nDate given: " + row[1] + \
+                "\nCorrect format: 'YYYY-MM-DDTHH:MM:SS+HH:MM'"
+                )
 
         # Modifying the frequency of cookie if the date in current row 
         # matches the date to search            

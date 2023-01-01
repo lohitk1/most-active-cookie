@@ -41,12 +41,20 @@ def validate_date(format, date_string):
         Returns:
             boolean: Whether given date matches the given format
     """
+    correct_length_of_date = 0
     if (format == "datetime"):
+        correct_length_of_date = 25
         date_format = "%Y-%m-%dT%H:%M:%S%z"
 
+
     else:
+        correct_length_of_date = 10
         date_format = "%Y-%m-%d"
 
+    # Checking if length of given date is correct
+    if (correct_length_of_date != len(date_string)):
+        return False
+    
     # Checking if given date fits the given format
     try:
         datetime.datetime.strptime(date_string, date_format)

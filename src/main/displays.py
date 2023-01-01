@@ -1,3 +1,5 @@
+import sys
+
 def display_error(error_message=""):
     """Function to display error messages to console
         
@@ -7,9 +9,7 @@ def display_error(error_message=""):
         Returns:
             None
         """
-    if (error_message != ""):
-        print(error_message)
-    quit()
+    sys.exit(error_message)
 
 
 def print_items_found(list_of_items, item_name_plural="items"):
