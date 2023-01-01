@@ -130,6 +130,23 @@ def extractCookieFrequency(file_name, date_to_search):
     return cookie_freq_dictionary
 
 
+def findMaxFreqFromDictionary(dictionary):
+    max_freq = 0
+    max_freq_item_list = []
+
+    for item, freq in dictionary.items():
+        # Restart list if higher frequency is found
+        if(freq > max_freq):
+            max_freq = freq
+            max_freq_item_list = [item]
+
+        # Append to list if equal frequency is found
+        elif (freq == max_freq):
+            max_freq_item_list.append(item)
+
+    return max_freq_item_list
+
+
 def main():
 
     # Parsing the command line arguments to get the csv file name and date to search for in file
@@ -139,7 +156,10 @@ def main():
     # on the given date to search, and storing them in a hashmap
     cookie_freq_dictionary = extractCookieFrequency(csv_file_name, date_to_search)
 
-    print(cookie_freq_dictionary)
+    # Finding the list of cookies with the maximum occuring frequency in the hashmap
+    max_freq_cookie_list = findMaxFreqFromDictionary(cookie_freq_dictionary)
+
+    print(max_freq_cookie_list)
 
 
 if __name__ == "__main__":
