@@ -1,8 +1,8 @@
 import csv
-from validations import validateCSVHeaders, validateDate
-from displays import displayError
+from validations import validate_csv_headers, validate_date
+from displays import display_error
 
-def extractCookieFrequency(file_name, date_to_search):
+def extract_cookie_frequency(file_name, date_to_search):
     """Function to extract the frequencies of each cookie found on given
     date from given CSV file and store it in a dictionary
 
@@ -19,8 +19,8 @@ def extractCookieFrequency(file_name, date_to_search):
 
     # Validating headers
     headers = next(csvreader)
-    if (validateCSVHeaders(headers, ["cookie", "timestamp"]) == False):
-        displayError(
+    if (validate_csv_headers(headers, ["cookie", "timestamp"]) == False):
+        display_error(
             "Headers in CSV file do not fit the problem description. \
             Make sure you have given the correct csv file."
         )
@@ -30,8 +30,8 @@ def extractCookieFrequency(file_name, date_to_search):
     cookie_freq_dictionary = dict()
     row_counter = 1
     for row in csvreader:
-        if (validateDate("datetime", row[1]) == False):
-            displayError(
+        if (validate_date("datetime", row[1]) == False):
+            display_error(
                 "Date in row " + row_counter + " of given CSV file \
                 is in the wrong format. \nDate in row " + row_counter + \
                 " of given CSV file of wrong format."
@@ -47,7 +47,7 @@ def extractCookieFrequency(file_name, date_to_search):
     return cookie_freq_dictionary
 
 
-def findMaxFreqFromDictionary(dictionary):
+def find_max_freq_from_dictionary(dictionary):
     """Function to find the list of items with maximum frequency given a item,frequency dictionary
         
         Parameters:

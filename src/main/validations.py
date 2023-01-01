@@ -1,7 +1,7 @@
 import csv
 import datetime
 
-def validateCSVFile(file_name):
+def validate_csv_file(file_name):
     """Function to validate whether given file name is a valid CSV file
     
         Parameters:
@@ -31,7 +31,7 @@ def validateCSVFile(file_name):
     return True
 
 
-def validateDate(format, date_string):
+def validate_date(format, date_string):
     """Function to validate if given date string matches the given date format
     
         Parameters:
@@ -57,7 +57,7 @@ def validateDate(format, date_string):
     return True
 
 
-def validateCSVHeaders(headers, correct_headers):
+def validate_csv_headers(headers, correct_headers):
     """Function to validate if given CSV header values match the correct/expected header values
         
         Parameters:

@@ -1,4 +1,4 @@
-def displayError(error_message=""):
+def display_error(error_message=""):
     """Function to display error messages to console
         
         Parameters:
@@ -12,7 +12,7 @@ def displayError(error_message=""):
     quit()
 
 
-def printItemsFound(list_of_items, item_name_plural="items"):
+def print_items_found(list_of_items, item_name_plural="items"):
     """Function to properly display the items from list of items 
         
         Parameters:
