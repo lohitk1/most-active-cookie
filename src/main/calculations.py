@@ -3,6 +3,16 @@ from validations import validateCSVHeaders, validateDate
 from displays import displayError
 
 def extractCookieFrequency(file_name, date_to_search):
+    """Function to extract the frequencies of each cookie found on given
+    date from given CSV file and store it in a dictionary
+
+        Parameters: 
+            file_name (str): Name of valid CSV file
+            date_to_search (str): Date in string for which to find cookie frequencies
+            
+        Returns:
+            dictionary: Dictionary with cookies as keys and their corresponding frequencies as values
+    """
     # Opening the given csv file name to read contents
     csv_file_obj = open("../logs/{}".format(file_name))
     csvreader = csv.reader(csv_file_obj)
@@ -38,6 +48,14 @@ def extractCookieFrequency(file_name, date_to_search):
 
 
 def findMaxFreqFromDictionary(dictionary):
+    """Function to find the list of items with maximum frequency given a item,frequency dictionary
+        
+        Parameters:
+            dictionary (dict): Dictionary with keys->items and values->frequencies
+            
+        Returns:
+            list: List of items with maximum frequency
+    """
     max_freq = 0
     max_freq_item_list = []
 

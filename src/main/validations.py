@@ -2,6 +2,14 @@ import csv
 import datetime
 
 def validateCSVFile(file_name):
+    """Function to validate whether given file name is a valid CSV file
+    
+        Parameters:
+            file_name (str): Name of file to validate
+            
+        Returns:
+            boolean: Whether file name corresponds to valid CSV file
+    """
     # Checking if the given file name exists in the directory
     try:
         file_obj = open(("../logs/{}".format(file_name)))
@@ -24,6 +32,15 @@ def validateCSVFile(file_name):
 
 
 def validateDate(format, date_string):
+    """Function to validate if given date string matches the given date format
+    
+        Parameters:
+            format (str): The expected date format. Ex: date, datetime
+            date_string (str): The date to validate in string format
+        
+        Returns:
+            boolean: Whether given date matches the given format
+    """
     if (format == "datetime"):
         date_format = "%Y-%m-%dT%H:%M:%S%z"
 
@@ -41,6 +58,15 @@ def validateDate(format, date_string):
 
 
 def validateCSVHeaders(headers, correct_headers):
+    """Function to validate if given CSV header values match the correct/expected header values
+        
+        Parameters:
+            headers (list(any)): List of given header values
+            correct_headers (list(any): List of correct/expected header values
+            
+        Returns:
+            boolean: Whether given header values match correct/expected header values
+    """
     # Checking whether number of given headers is correct
     if (len(headers) != len(correct_headers)):
         return False
