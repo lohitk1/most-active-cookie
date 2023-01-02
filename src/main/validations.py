@@ -1,29 +1,27 @@
 import csv
 import datetime
 
-def validate_csv_file(file_name):
+def validate_csv_file(file_name, logs_directory = "./src/logs/"):
     """Function to validate whether given file name is a valid CSV file
     
         Parameters:
             file_name (str): Name of file to validate
+            logs_directory (str): Stores the directory of the log files
             
         Returns:
             boolean: Whether file name corresponds to valid CSV file
     """
+
     # Checking if the given file name exists in the directory
     try:
-        file_obj = open(("./src/logs/{}".format(file_name)))
+        file_obj = open(("{}{}".format(logs_directory, file_name)))
 
     except:
         print("Given file name doesn't exist in the current directory")
         return False
 
     # Checking if the given file name corresponds to a csv file
-    try:
-        csvreader = csv.reader(file_obj)
-        next(csvreader)
-    
-    except:
+    if(file_name[-4:] != ".csv"):
         print("Given file name does not correspond to a CSV file")
         return False
 

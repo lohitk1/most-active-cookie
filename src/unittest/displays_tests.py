@@ -10,6 +10,7 @@ class PrintItemsFoundTest(unittest.TestCase):
         sys.stdout = captured_output
         print_items_found(["value1", "value2", "value3"], "values")
         sys.stdout = sys.__stdout__
+
         self.assertEqual(captured_output.getvalue().strip(), "value1\nvalue2\nvalue3")
 
     
@@ -18,6 +19,7 @@ class PrintItemsFoundTest(unittest.TestCase):
         sys.stdout = captured_output
         print_items_found(["value1"], "values")
         sys.stdout = sys.__stdout__
+
         self.assertEqual(captured_output.getvalue().strip(), "value1")
 
     
@@ -26,6 +28,7 @@ class PrintItemsFoundTest(unittest.TestCase):
         sys.stdout = captured_output
         print_items_found([], "values")
         sys.stdout = sys.__stdout__
+
         self.assertEqual(captured_output.getvalue().strip(), "No values were found")
 
     
@@ -34,4 +37,5 @@ class PrintItemsFoundTest(unittest.TestCase):
         sys.stdout = captured_output
         print_items_found([])
         sys.stdout = sys.__stdout__
+        
         self.assertEqual(captured_output.getvalue().strip(), "No items were found")
