@@ -7,7 +7,7 @@ use_plugin("python.unittest")
 use_plugin("python.install_dependencies")
 
 
-name = "most-active-cookie"
+name = "most_active_cookie"
 default_task = "publish"
 
 executable_dir = "build/"
@@ -30,4 +30,4 @@ def publish(project, logger):
     # Creating the executable file
     from PyInstaller.__main__ import run
     os.chdir('src/main')
-    run(['--name=%s' % project.name, '--onefile', '--clean', '--distpath=../../', 'most-active-cookie.py'])
+    run(['--name=%s' % project.name, '--onefile', '--clean', '--distpath=../../', 'most_active_cookie.py'])
