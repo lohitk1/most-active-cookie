@@ -30,4 +30,5 @@ def publish(project, logger):
     # Creating the executable file
     from PyInstaller.__main__ import run
     os.chdir('src/main')
-    run(['--name=%s' % project.name, '--onefile', '--clean', '--distpath=../../', 'most_active_cookie.py'])
+    run(['--name=%s' % project.name, '--onefile', '--clean',
+     '--distpath=../../', 'most_active_cookie.py'])

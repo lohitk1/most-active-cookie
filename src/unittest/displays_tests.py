@@ -11,7 +11,8 @@ class PrintItemsFoundTest(unittest.TestCase):
         print_items_found(["value1", "value2", "value3"], "values")
         sys.stdout = sys.__stdout__
 
-        self.assertEqual(captured_output.getvalue().strip(), "value1\nvalue2\nvalue3")
+        self.assertEqual(captured_output.getvalue().strip(),
+         "value1\nvalue2\nvalue3")
 
     
     def test_one_item_list(self):
@@ -29,7 +30,8 @@ class PrintItemsFoundTest(unittest.TestCase):
         print_items_found([], "values")
         sys.stdout = sys.__stdout__
 
-        self.assertEqual(captured_output.getvalue().strip(), "No values were found")
+        self.assertEqual(captured_output.getvalue().strip(),
+         "No values were found")
 
     
     def test_no_item_list_without_plural_given(self):
@@ -38,4 +40,5 @@ class PrintItemsFoundTest(unittest.TestCase):
         print_items_found([])
         sys.stdout = sys.__stdout__
         
-        self.assertEqual(captured_output.getvalue().strip(), "No items were found")
+        self.assertEqual(captured_output.getvalue().strip(),
+         "No items were found")

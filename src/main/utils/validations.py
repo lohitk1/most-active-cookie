@@ -1,4 +1,3 @@
-import csv
 import datetime
 
 def validate_csv_file(file_name, logs_directory = "./src/logs/"):
@@ -64,14 +63,16 @@ def validate_date(format, date_string):
 
 
 def validate_csv_headers(headers, correct_headers):
-    """Function to validate if given CSV header values match the correct/expected header values
+    """Function to validate if given CSV header values match the 
+    correct/expected header values
         
         Parameters:
             headers (list(any)): List of given header values
             correct_headers (list(any): List of correct/expected header values
             
         Returns:
-            boolean: Whether given header values match correct/expected header values
+            boolean: Whether given header values match 
+            correct/expected header values
     """
     # Checking whether number of given headers is correct
     if (len(headers) != len(correct_headers)):

@@ -1,17 +1,20 @@
 import csv
-from validations import validate_csv_headers, validate_date
-from displays import display_error
+from utils.validations import validate_csv_headers, validate_date
+from utils.displays import display_error
 
-def extract_cookie_frequency(file_name, date_to_search, logs_directory="./src/logs/"):
+def extract_cookie_frequency(
+    file_name, date_to_search, logs_directory="./src/logs/"):
     """Function to extract the frequencies of each cookie found on given
     date from given CSV file and store it in a dictionary
 
         Parameters: 
             file_name (str): Name of valid CSV file
-            date_to_search (str): Date in string for which to find cookie frequencies
+            date_to_search (str): Date in string for which to 
+            find cookie frequencies
             
         Returns:
-            dictionary: Dictionary with cookies as keys and their corresponding frequencies as values
+            dictionary: Dictionary with cookies as keys and their
+            corresponding frequencies as values
     """
     # Opening the given csv file name to read contents
     csv_file_obj = open("{}{}".format(logs_directory, file_name))
@@ -22,8 +25,7 @@ def extract_cookie_frequency(file_name, date_to_search, logs_directory="./src/lo
     if (validate_csv_headers(headers, ["cookie", "timestamp"]) == False):
         display_error(
             "Headers in CSV file do not fit the problem description." +\
-            "Make sure you have given the correct csv file."
-        )
+            "Make sure you have given the correct csv file.")
     
     # Storing the cookies that appear on the date to search and their 
     # corresponding frequencies on that date in a hashmap
@@ -40,7 +42,8 @@ def extract_cookie_frequency(file_name, date_to_search, logs_directory="./src/lo
         # Modifying the frequency of cookie if the date in current row 
         # matches the date to search            
         if (row[1][:10] == date_to_search):
-            cookie_freq_dictionary[row[0]] = 1 + cookie_freq_dictionary.get(row[0], 0)
+            cookie_freq_dictionary[row[0]] = 1 + \
+                cookie_freq_dictionary.get(row[0], 0)
         
         row_counter += 1
 
@@ -48,10 +51,12 @@ def extract_cookie_frequency(file_name, date_to_search, logs_directory="./src/lo
 
 
 def find_max_freq_from_dictionary(dictionary):
-    """Function to find the list of items with maximum frequency given a item,frequency dictionary
+    """Function to find the list of items with maximum frequency 
+    given a item,frequency dictionary
         
         Parameters:
-            dictionary (dict): Dictionary with keys->items and values->frequencies
+            dictionary (dict): Dictionary with keys->items and 
+            values->frequencies
             
         Returns:
             list: List of items with maximum frequency

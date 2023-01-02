@@ -1,7 +1,8 @@
 import unittest
 import io
 import sys
-from utils.validations import validate_csv_file, validate_date, validate_csv_headers
+from utils.validations import validate_csv_file, validate_date,\
+     validate_csv_headers
 
 
 class ValidateCSVFileTest(unittest.TestCase):
@@ -13,7 +14,8 @@ class ValidateCSVFileTest(unittest.TestCase):
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        returned_result = validate_csv_file(file_name, self.test_logs_directory)
+        returned_result = validate_csv_file(
+            file_name, self.test_logs_directory)
         sys.stdout = sys.__stdout__
 
         self.assertEqual(captured_output.getvalue().strip(), "")
@@ -25,7 +27,8 @@ class ValidateCSVFileTest(unittest.TestCase):
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        returned_result = validate_csv_file(file_name, self.test_logs_directory)
+        returned_result = validate_csv_file(
+            file_name, self.test_logs_directory)
         sys.stdout = sys.__stdout__
 
         self.assertEqual(captured_output.getvalue().strip(), \
@@ -38,10 +41,11 @@ class ValidateCSVFileTest(unittest.TestCase):
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
-        returned_result = validate_csv_file(file_name, self.test_logs_directory)
+        returned_result = validate_csv_file(
+            file_name, self.test_logs_directory)
         sys.stdout = sys.__stdout__
 
-        self.assertEqual(captured_output.getvalue().strip(), \
+        self.assertEqual(captured_output.getvalue().strip(),
         "Given file name does not correspond to a CSV file")
         self.assertFalse(returned_result)
 
