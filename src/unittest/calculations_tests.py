@@ -6,7 +6,7 @@ class ExtractCookieFrequencyTest(unittest.TestCase):
     test_logs_directory = "./src/logs/test_logs/"
 
     def test_log_file_with_equal_freq_on_date_to_search(self):
-        file_name = "cookie_logs.csv"
+        file_name = "cookie_log.csv"
         date_to_search = "2018-12-08"
 
         self.assertEqual(extract_cookie_frequency(file_name, date_to_search, self.test_logs_directory), \
@@ -14,7 +14,7 @@ class ExtractCookieFrequencyTest(unittest.TestCase):
         
 
     def test_log_file_has_one_date(self):
-        file_name = "cookie_logs_one_date.csv"
+        file_name = "cookie_log_one_date.csv"
         date_to_search = "2018-12-08"
 
         self.assertEqual(extract_cookie_frequency(file_name, date_to_search, self.test_logs_directory), \
@@ -22,7 +22,7 @@ class ExtractCookieFrequencyTest(unittest.TestCase):
 
 
     def test_log_file_does_not_have_date_to_search(self):
-        file_name = "cookie_logs.csv"
+        file_name = "cookie_log.csv"
         date_to_search = "2018-12-06"
 
         self.assertEqual(extract_cookie_frequency(file_name, date_to_search, self.test_logs_directory), \
@@ -30,7 +30,7 @@ class ExtractCookieFrequencyTest(unittest.TestCase):
         
 
     def test_log_file_has_no_records(self):
-        file_name = "cookie_logs_empty.csv"
+        file_name = "cookie_log_empty.csv"
         date_to_search = "2018-12-08"
 
         self.assertEqual(extract_cookie_frequency(file_name, date_to_search, self.test_logs_directory), \

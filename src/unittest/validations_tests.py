@@ -9,7 +9,7 @@ class ValidateCSVFileTest(unittest.TestCase):
     test_logs_directory = "./src/logs/test_logs/"
 
     def test_valid_file_name(self):
-        file_name = "cookie_logs.csv"
+        file_name = "cookie_log.csv"
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
@@ -21,7 +21,7 @@ class ValidateCSVFileTest(unittest.TestCase):
 
 
     def test_invalid_file_name_not_existing(self):
-        file_name = "cookie_logs_2.csv"
+        file_name = "cookie_log_2.csv"
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
@@ -34,7 +34,7 @@ class ValidateCSVFileTest(unittest.TestCase):
 
 
     def test_invalid_file_name_not_csv(self):
-        file_name = "cookie_logs.txt"
+        file_name = "cookie_log.txt"
 
         captured_output = io.StringIO()
         sys.stdout = captured_output
