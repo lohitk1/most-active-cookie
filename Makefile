@@ -11,6 +11,7 @@ TESTFLAGS=-m
 MAIN_PYTHON=most_active_cookie.py
 
 output: $(SRC)/most_active_cookie.py $(UTILS)/calculations.py $(UTILS)/displays.py $(UTILS)/validations.py
+	pip install pyinstaller
 	$(CC) $(TESTFLAGS) unittest $(TEST)/calculations_tests.py
 	$(CC) $(TESTFLAGS) unittest $(TEST)/displays_tests.py
 	$(CC) $(TESTFLAGS) unittest $(TEST)/calculations_tests.py
