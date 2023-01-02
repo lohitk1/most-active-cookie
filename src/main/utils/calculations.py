@@ -1,6 +1,6 @@
 import csv
-from utils.validations import validate_csv_headers, validate_date
-from utils.displays import display_error
+from .validations import validate_csv_headers, validate_date
+from .displays import display_error
 
 def extract_cookie_frequency(
     file_name, date_to_search, logs_directory="./src/logs/"):
@@ -47,6 +47,7 @@ def extract_cookie_frequency(
         
         row_counter += 1
 
+    csv_file_obj.close()
     return cookie_freq_dictionary
 
 

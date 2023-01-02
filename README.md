@@ -59,18 +59,10 @@ fbcn5UAVanZf6UtG
  ~~~
  pip install pyinstaller
  ~~~
- - cd into the src/main directory:
- ~~~
- cd src/main
- ~~~
  - To create executable, run command:
  ~~~
- pyinstaller --name=most_active_cookie --onefile --distpath=../../ --clean most_active_cookie.py
+ pyinstaller --name=most_active_cookie --onefile --distpath=./ --clean ./src/main/most_active_cookie.py
  ~~~
-  - cd out back to main directory:
-~~~
-cd ../..
-~~~
 
 ## Run Executable
   - To run the executable, run command:

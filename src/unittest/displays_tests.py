@@ -1,7 +1,7 @@
 import unittest
 import io
 import sys
-from utils.displays import print_items_found
+from ..main.utils.displays import print_items_found
 
 
 class PrintItemsFoundTest(unittest.TestCase):
