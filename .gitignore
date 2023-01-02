@@ -1,2 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+
+# Pybuild folders
+target/
+build/
+.pybuilder
+dist/
