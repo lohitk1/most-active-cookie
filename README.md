@@ -68,6 +68,7 @@ fbcn5UAVanZf6UtG
 
  ### Option 2 - Make Build
  - This is another approach to build the executable file
+ - Install python3 on your system
  - Make sure you have cloned the make-build-system branch
  - Run command:
  ~~~
