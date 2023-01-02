@@ -52,7 +52,7 @@ fbcn5UAVanZf6UtG
  ~~~
  pyb
  ~~~
-  - The executable file should now be created in the root directory, which is the most-active-cookie directory. This usually takes some time.\
+  - The executable file should now be created in the root directory, which is the most-active-cookie directory. This usually takes some time.
 
 **ALTERNATIVE APPROACH**
  - To save time and just create the executable file, first install pyinstaller. Run command:
