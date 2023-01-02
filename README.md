@@ -43,6 +43,8 @@ fbcn5UAVanZf6UtG
 ● Cookies in the log file are sorted by timestamp (most recent occurrence is first line of the file).
 
 ## Build Executable
+### Option 1 - Pybuilder Build
+ - Make sure you have cloned the main branch
  - Install python3 on your system
  - Make sure you pip install pybuilder. Run command:
  ~~~
@@ -63,6 +65,15 @@ fbcn5UAVanZf6UtG
  ~~~
  pyinstaller --name=most_active_cookie --onefile --distpath=./ --clean ./src/main/most_active_cookie.py
  ~~~
+
+ ### Option 2 - Make Build
+ - This is another approach to build the executable file
+ - Make sure you have cloned the make-build-system branch
+ - Run command:
+ ~~~
+ make
+ ~~~
+  - This should install all dependencies, run unit tests and create executable file
 
 ## Run Executable
   - To run the executable, run command:
