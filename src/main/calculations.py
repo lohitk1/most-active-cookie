@@ -30,6 +30,7 @@ def extract_cookie_frequency(file_name, date_to_search, logs_directory="./src/lo
     cookie_freq_dictionary = dict()
     row_counter = 1
     for row in csvreader:
+        print("Row: ", row)
         if (validate_date("datetime", row[1]) == False):
             display_error(
                 "Date in entry " + str(row_counter) + " of given CSV file" \
