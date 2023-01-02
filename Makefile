@@ -1,19 +1,19 @@
 
 CC=python3
-CC_EXE=pyinstaller
-C_EXEFLAGS=--name=most_active_cookie --onefile --distpath=./ --clean
+CC_EXE=PyInstaller
+C_EXE_FLAGS=--name=most_active_cookie --onefile --distpath=./ --clean
 SRC=src/main
 UTILS=src/main/utils
 TEST=src/unittest
-TESTFLAGS=-m
+PYTHON_FLAGS=-m
 
 
 MAIN_PYTHON=most_active_cookie.py
 
 output: $(SRC)/most_active_cookie.py $(UTILS)/calculations.py $(UTILS)/displays.py $(UTILS)/validations.py
 	pip install pyinstaller
-	$(CC) $(TESTFLAGS) unittest $(TEST)/calculations_tests.py
-	$(CC) $(TESTFLAGS) unittest $(TEST)/displays_tests.py
-	$(CC) $(TESTFLAGS) unittest $(TEST)/calculations_tests.py
-	$(CC_EXE) $(C_EXEFLAGS) ./$(SRC)/$(MAIN_PYTHON)
+	$(CC) $(PYTHON_FLAGS) unittest $(TEST)/calculations_tests.py
+	$(CC) $(PYTHON_FLAGS) unittest $(TEST)/displays_tests.py
+	$(CC) $(PYTHON_FLAGS) unittest $(TEST)/calculations_tests.py
+	$(CC) $(PYTHON_FLAGS) $(CC_EXE) $(C_EXE_FLAGS) ./$(SRC)/$(MAIN_PYTHON)
 
