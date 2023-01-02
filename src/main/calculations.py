@@ -14,7 +14,7 @@ def extract_cookie_frequency(file_name, date_to_search):
             dictionary: Dictionary with cookies as keys and their corresponding frequencies as values
     """
     # Opening the given csv file name to read contents
-    csv_file_obj = open("../logs/{}".format(file_name))
+    csv_file_obj = open("./src/logs/{}".format(file_name))
     csvreader = csv.reader(csv_file_obj)
 
     # Validating headers

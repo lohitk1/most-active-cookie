@@ -12,7 +12,7 @@ def validate_csv_file(file_name):
     """
     # Checking if the given file name exists in the directory
     try:
-        file_obj = open(("../logs/{}".format(file_name)))
+        file_obj = open(("./src/logs/{}".format(file_name)))
 
     except:
         print("Given file name doesn't exist in the current directory")
