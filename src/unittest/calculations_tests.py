@@ -1,5 +1,5 @@
 import unittest
-from calculations import extract_cookie_frequency, find_max_freq_from_dictionary
+from utils.calculations import extract_cookie_frequency, find_max_freq_from_dictionary
 
 class ExtractCookieFrequencyTest(unittest.TestCase):
     # Changing the root logs directory for the test cases

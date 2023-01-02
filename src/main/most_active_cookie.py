@@ -1,8 +1,8 @@
 import argparse
 import datetime
-from validations import validate_csv_file, validate_date
-from calculations import extract_cookie_frequency, find_max_freq_from_dictionary
-from displays import display_error, print_items_found
+from utils.validations import validate_csv_file, validate_date
+from utils.calculations import extract_cookie_frequency, find_max_freq_from_dictionary
+from utils.displays import display_error, print_items_found
 
 def get_command_line_arguments():
     parser = argparse.ArgumentParser(

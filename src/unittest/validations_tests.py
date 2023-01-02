@@ -1,7 +1,7 @@
 import unittest
 import io
 import sys
-from validations import validate_csv_file, validate_date, validate_csv_headers
+from utils.validations import validate_csv_file, validate_date, validate_csv_headers
 
 
 class ValidateCSVFileTest(unittest.TestCase):
