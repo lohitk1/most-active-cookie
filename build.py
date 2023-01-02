@@ -22,10 +22,16 @@ def set_properties(project):
     project.set_property("dir_source_main_python", "src/main")
     project.set_property("dir_source_unittest_python", "src/unittest")
     project.set_property("dir_source_main_scripts", "src/scripts")
+    project.set_property('virtualenv_use_plugin', False)
 
 @after("publish")
 def publish(project, logger):
     import os
+    import subprocess
+
+    # Installing pyinstaller
+    logger.info("Installing pyinstaller")
+    subprocess.run(['pip', 'install', 'pyinstaller'])
 
     # Creating the executable file
     from PyInstaller.__main__ import run
