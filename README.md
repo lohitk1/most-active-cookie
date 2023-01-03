@@ -45,7 +45,7 @@ fbcn5UAVanZf6UtG
 ## Build Executable
 ### Option 1 - Pybuilder Build
  - Make sure you have cloned the main branch
- - Install python3 on your system
+ - Make sure you have python3 and pip on your system
  - Make sure you pip install pybuilder. Run command:
  ~~~
  pip install pybuilder
@@ -68,7 +68,7 @@ fbcn5UAVanZf6UtG
 
  ### Option 2 - Make Build
  - This is another approach to build the executable file
- - Install python3 on your system
+ - Make sure you have python3 and pip on your system
  - Make sure you have cloned the make-build-system branch
  - Run command:
  ~~~
