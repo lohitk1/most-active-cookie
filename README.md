@@ -48,11 +48,11 @@ fbcn5UAVanZf6UtG
 ## Run Executable
   - To run the executable, run command:
 ~~~
-./most-active-cookie csv_file_name -d date-to-search
+./most-active-cookie.py csv_file_name -d date-to-search
 ~~~
  - Example of this command:
 ~~~
-./most_active_cookie cookie_log.csv -d 2018-12-08
+./most_active_cookie.py cookie_log.csv -d 2018-12-08
 ~~~
 
 ## Run Tests
